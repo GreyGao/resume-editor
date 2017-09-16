@@ -1,11 +1,17 @@
 <template>
   <div id="resumePreview">
     <span>我是ResumePreiview</span>
+    {{resume}}
   </div>
 </template>
 <script>
   export default{
-    name: 'ResumePreiview'
+    name: 'ResumePreiview',
+    computed: {
+      resume () {
+        return this.$store.state.resume
+      }
+    }
   }
 </script>
 <style>
