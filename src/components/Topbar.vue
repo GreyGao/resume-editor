@@ -5,7 +5,7 @@
       <div class="actions">
         <a class="button primary" href="#" @click.prevent="signUpDialogVisible = true">注册</a>
         <MyDialog title="注册" :visible="signUpDialogVisible" @close="signUpDialogVisible = false">
-          我就是 slot 内容
+          <SignUpForm @success="login($event)"></SignUpForm>
         </MyDialog>
         <a class="button" href="#">登录</a>
         <button class="primary">保存</button>
@@ -16,6 +16,8 @@
 </template>
 <script>
   import MyDialog from './MyDialog'
+  import SignUpForm from './SignUpForm.vue'
+
   export default{
     name: 'Topbar',
     data () {
@@ -24,7 +26,18 @@
         }
     },
     components: {
-        MyDialog
+      MyDialog, SignUpForm
+    },
+    computed: {
+      user () {
+        return this.$store.state.user
+      }
+    },
+    methods: {
+      login (user) {
+        this.signUpDialogVisible = false
+        this.$store.commit('setUser', user)
+      }
     }
   }
 </script>
