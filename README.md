@@ -1,6 +1,9 @@
 # 在线简历编辑器
 
 > A Vue.js project
+>
+## 链接
+https://greygao.github.io/resume-editor/dist/
 
 ## 功能
 
