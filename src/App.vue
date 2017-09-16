@@ -14,13 +14,17 @@
   import Topbar from './components/Topbar.vue'
   import ResumeEditor from './components/ResumeEditor.vue'
   import ResumePreview from './components/ResumePreview.vue'
+  import icons from './assets/icons'
 
   export default {
     name: 'app',
     data () {
       return {}
     },
-    components: {Topbar, ResumeEditor, ResumePreview}
+    components: {Topbar, ResumeEditor, ResumePreview},
+    created () {
+        document.body.insertAdjacentHTML('afterbegin', icons)
+    }
   }
 </script>
 
