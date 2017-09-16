@@ -40,6 +40,7 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+    background: #EAEBEC;
   }
   .page > main {
     flex-grow: 1;
@@ -50,6 +51,8 @@
     margin: 0;
     display: flex;
     justify-content: space-around;
+    margin-top: 16px;
+    margin-bottom: 16px;
   }
   #resumeEditor {
     width: 35%;
