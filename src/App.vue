@@ -48,11 +48,12 @@
   .page > main {
     min-width: 1024px;
     max-width: 1440px;
-    margin: 0;
-    display: flex;
-    justify-content: space-around;
     margin-top: 16px;
     margin-bottom: 16px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    align-self: center;
   }
   #resumeEditor {
     width: 35%;
