@@ -13,7 +13,16 @@
     </nav>
     <ol class="panels">
       <li v-for="item in resume.config" v-show="item.field===selected">
-        <div class="resumeField" v-for="(value,key) in resume[item.field]">
+        <div v-if="resume[item.field] instanceof Array">
+          <div class="subitem" v-for="subitem in resume[item.field]">
+            <div class="resumeField" v-for="(value,key) in subitem">
+              <label>{{key}}</label>
+              <input type="text" :value="value">
+            </div>
+            <hr>
+          </div>
+        </div>
+        <div v-else class="resumeField" v-for="(value,key) in resume[item.field]">
           <label>{{key}}</label>
           <input type="text" v-model="resume[item.field][key]">
         </div>
@@ -41,12 +50,26 @@
             city: '',
             title: ''
           },
-          'work history': [],
-          education: [],
-          projects: [],
-          award: [],
-          contacts: [],
-          others: []
+          'work history': [
+            {company: '', content: ''},
+            {company: '', content: ''}
+          ],
+          education: [
+            {school: '', content: ''},
+            {school: '', content: ''}
+          ],
+          projects: [
+            {name: '', content: ''},
+            {name: '', content: ''}
+          ],
+          awards: [
+            {name: '', content: ''},
+            {name: '', content: ''}
+          ],
+          contacts: [
+            {contact: '', content: ''},
+            {contact: '', content: ''}
+          ]
         }
       }
     }
@@ -103,6 +126,11 @@
         padding: 0 8px;
       }
     }
-  }
 
+  }
+  hr{
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 24px 0;
+  }
 </style>
