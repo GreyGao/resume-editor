@@ -51,7 +51,8 @@
     margin-top: 16px;
     margin-bottom: 16px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 0 16px;
     width: 100%;
     align-self: center;
   }
@@ -62,5 +63,7 @@
   #resumePreview {
     width: 61.66667%;
     background: #777;
+    flex-grow: 1;
+    margin-left: 16px;
   }
 </style>
