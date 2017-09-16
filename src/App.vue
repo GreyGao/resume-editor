@@ -24,7 +24,7 @@
   }
 </script>
 
-<style>
+<style lang="scss" rel="stylesheet/scss">
   @import "assets/reset.css";
   @import "vendors/normalize.css";
   #app {
@@ -37,11 +37,10 @@
     display: flex;
     flex-direction: column;
     background: #EAEBEC;
-  }
-  .page > main {
+    > main {
     flex-grow: 1;
-  }
-  .page > main {
+    }
+    > main {
     min-width: 1024px;
     max-width: 1440px;
     margin-top: 16px;
@@ -51,6 +50,7 @@
     padding: 0 16px;
     width: 100%;
     align-self: center;
+    }
   }
   #resumeEditor {
     width: 35%;
