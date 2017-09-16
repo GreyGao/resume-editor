@@ -3,8 +3,8 @@
     <nav>
       <ol>
         <li v-for="(item,index) in resume.config"
-        :class="{active:item.field === selected}"
-        @click="selected = item.field">
+            :class="{active:item.field === selected}"
+            @click="selected = item.field">
           <svg class="icon">
             <use :xlink:href="`#icon-${item.icon}`"></use>
           </svg>
@@ -68,6 +68,7 @@
           align-items: center;
           margin-top: 16px;
           margin-bottom: 16px;
+          cursor: pointer;
           &.active {
             background: white;
             color: black;
