@@ -13,7 +13,10 @@
     </nav>
     <ol class="panels">
       <li v-for="item in resume.config" v-show="item.field===selected">
-        {{resume[item]}}
+        <div class="resumeField" v-for="(value,key) in resume[item.field]">
+          <label>{{key}}</label>
+          <input type="text" v-model="resume[item.field][key]">
+        </div>
       </li>
     </ol>
   </div>
@@ -75,13 +78,31 @@
           }
         }
       }
-      svg.icon{
-        width:24px;
-        height:24px;
+      svg.icon {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    > .panels {
+      flex-grow: 1;
+      list-style: none;
+      > li {
+        padding: 24px;
+      }
+    }
+    .resumeField {
+      > label {
+        display: block;
+      }
+      input[type=text] {
+        margin: 16px 0;
+        border: 1px solid #ddd;
+        box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.25);
+        width: 100%;
+        height: 40px;
+        padding: 0 8px;
       }
     }
   }
-  ol {
-    list-style: none;
-  }
+
 </style>
