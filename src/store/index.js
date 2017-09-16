@@ -9,7 +9,7 @@ export default new Vuex.Store({
     resume: {
       config: [
         {field: 'profile', icon: 'id'},
-        {field: 'work history', icon: 'work'},
+        {field: 'workHistory', icon: 'work'},
         {field: 'education', icon: 'book'},
         {field: 'projects', icon: 'heart'},
         {field: 'awards', icon: 'cup'},
@@ -20,7 +20,7 @@ export default new Vuex.Store({
         city: '',
         title: ''
       },
-      'work history': [
+      workHistory: [
         {company: '', content: ''},
         {company: '', content: ''}
       ],
