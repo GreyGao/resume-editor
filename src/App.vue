@@ -66,4 +66,12 @@
     flex-grow: 1;
     margin-left: 16px;
   }
+  svg.icon {
+    height: 1em;
+    width: 1em;
+    fill: currentColor;
+    vertical-align: -0.1em;
+    font-size: 16px;
+    cursor: pointer;
+  }
 </style>
