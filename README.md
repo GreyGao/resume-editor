@@ -1,27 +1,11 @@
-# vue-resume
+# 在线简历编辑器
 
 > A Vue.js project
 
-## Build Setup
+## 功能
 
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run all tests
-npm test
-```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+1. 添加简历内容，包括个人信息、工作经历、学习经历、获奖情况、项目经历和联系方式。
+2. 更新简历内容
+3. 选择简历模板
+4. 预览简历
+5. 发布简历
