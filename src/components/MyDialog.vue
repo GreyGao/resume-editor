@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper" v-show="visible">
     <div class="dialog">
-      <header>{{title}}11
+      <header>{{title}}
         <span class="close" @click="close">X</span>
       </header>
       <main>
