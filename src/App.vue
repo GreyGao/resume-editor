@@ -17,13 +17,11 @@
   import icons from './assets/icons'
 
   import store from './store/index.js'
-  import AV from './vendors/leanCloud'
   import getAVUser from './vendors/getAVUser'
 
   export default {
     name: 'app',
     store,
-    AV,
     data () {
       return {}
     },

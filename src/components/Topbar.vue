@@ -1,56 +1,64 @@
 <template>
   <div id="topbar">
     <div class="wrapper">
-      <span class="logo">Resume</span>
+      <span class="logo">Resumer</span>
+
       <div class="actions">
-        <div v-if="logined" class="userActions" >
-          <span>你好，{{user.username}}</span>
+        <div v-if="logined" class="userActions">
+          <span class="welcome">你好，{{user.username}}</span>
           <a class="button" href="#" @click.prevent="signOut">登出</a>
         </div>
         <div v-else class="userActions">
-          <a href="#" class="button primary" @click.prevent="signUpDialogVisible=true">注册</a>
-          <MyDialog title="注册" :visible="signUpDialogVisible" @close="signUpDialogVisible = false">
-            <SignUpForm @success="signIn($event)"></SignUpForm>
-          </MyDialog>
-          <a class="button" href="#">登录</a>
+          <a class="button primary" href="#" @click.prevent="signUpDialogVisible = true">注册</a>
+          <a class="button" href="#" @click.prevent="signInDialogVisible = true">登录</a>
         </div>
-        <button class="primary">保存</button>
-        <button>预览</button>
+        <button class="button primary">保存</button>
+        <button class="button">预览</button>
       </div>
     </div>
+    <MyDialog title="注册" :visible="signUpDialogVisible" @close="signUpDialogVisible = false">
+      <SignUpForm @success="signIn($event)"/>
+    </MyDialog>
+    <MyDialog title="登录" :visible="signInDialogVisible"
+              @close="signInDialogVisible = false">
+      <SignInForm @success="signIn($event)"/>
+    </MyDialog>
   </div>
 </template>
 <script>
   import MyDialog from './MyDialog'
   import SignUpForm from './SignUpForm.vue'
+  import SignInForm from './SignInForm.vue'
   import AV from '../vendors/leanCloud'
 
   export default{
     name: 'Topbar',
     data () {
-        return {
-            signUpDialogVisible: false
-        }
+      return {
+        signUpDialogVisible: false,
+        signInDialogVisible: false
+      }
     },
     components: {
-      MyDialog, SignUpForm
+      MyDialog, SignUpForm, SignInForm
     },
     computed: {
       user () {
         return this.$store.state.user
       },
       logined () {
-          return this.user.id
+        return this.user.id
       }
     },
     methods: {
       signOut () {
-          AV.User.logOut()
-          this.$store.commit('removeUser')
+        AV.User.logOut()
+        this.$store.commit('removeUser')
       },
       signIn (user) {
-          this.signUpDialogVisible = false
-          this.$store.commit('setUser', user)
+        this.signUpDialogVisible = false
+        this.signInDialogVisible = false
+        this.$store.commit('setUser', user)
       }
     }
   }
@@ -101,6 +109,9 @@
     display:flex;
     .userActions{
       margin-right:3em;
+      .welcome {
+        margin-right: .5em;
+      }
     }
   }
 </style>
